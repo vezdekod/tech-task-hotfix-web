@@ -1,7 +1,6 @@
 import React, { useMemo } from "react";
 import { Link } from "react-router-dom";
 import accounting from "accounting";
-// import PropTypes from 'prop-types';
 
 import edit from "../img/edit.svg";
 import "./place.css";
@@ -107,9 +106,13 @@ const Place = ({
         ))}
       </ul>
       <footer className="Place__footer">
-        <Link to={`/basket/${area.id}/${item.id}`} className="Place__order">
-          Оформить заказ ({price})
-        </Link>
+        {price > 0 ? (
+          <Link to={`/basket/${area.id}/${item.id}`} className="Place__order">
+            Оформить заказ ({price})
+          </Link>
+        ) : (
+          <div className="Place__order">Добавьте продукты в заказ</div>
+        )}
       </footer>
     </div>
   );
