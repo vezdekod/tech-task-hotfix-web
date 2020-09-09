@@ -36,7 +36,7 @@ const FOOD_AREAS = [
             price: 150,
           },
           {
-            id: "bigmac",
+            id: "free-potato-lol",
             image: OneTowar,
             name: "Картофель фри",
             price: 50,
