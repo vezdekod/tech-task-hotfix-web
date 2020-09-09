@@ -6,13 +6,15 @@
   "scripts": {
     "start": "cross-env PORT=10888 react-scripts start",
     "build": "react-scripts build",
-    "surge-deploy": "npm run build && surge ./build --domain kozodoi-club-hack.surge.sh"
+    "surge-deploy": "npm run build && surge ./build --domain kozodoi-club-hack.surge.sh",
+    "pretty": "prettier --write \"{,src/**/}*.{js,json,css}\""
   },
   "keywords": [],
   "author": "",
   "license": "MIT",
   "devDependencies": {
     "cross-env": "^5.2.0",
+    "prettier": "^2.1.1",
     "react-hot-loader": "^4.9.0",
     "react-scripts": "^3.1.2",
     "surge": "^0.21.3"

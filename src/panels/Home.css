@@ -1,8 +1,8 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
 
 body {
   margin: 0;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 .Home {
@@ -25,7 +25,6 @@ body {
   height: 67px;
   padding: 0 12px;
   background-color: #fff;
-
 }
 
 .Home__head {
@@ -74,7 +73,7 @@ body {
 }
 
 .Home__tab_active:after {
-  content: '';
+  content: "";
   position: absolute;
   left: 0;
   right: 0;
@@ -88,7 +87,8 @@ body {
   cursor: text;
 }
 
-.Home__edit {}
+.Home__edit {
+}
 
 .Home__items {
   margin: 0;
