@@ -1,7 +1,6 @@
 import React, { useMemo, useState, useEffect } from "react";
 import { withRouter, Link } from "react-router-dom";
 import accounting from "accounting";
-import TimePicker from 'react-time-picker';
 import * as store from 'store2'
 
 import Checkbox from "./Checkbox";
@@ -111,13 +110,15 @@ const Basket = ({
         </div>
         <div className="Place__choice-item">
           <span>Назначить</span>
-          <TimePicker
-            format="h:m"
-            disableClock={true}
+          <input
+            type="time"
             value={time}
-            onChange={setTime}
             onFocus={() => {
               setFaster(false);
+            }}
+            onChange={(event) => {
+              setFaster(false);
+              setTime(event.target.value);
             }}
             onBlur={() => {
               if (time) {
