@@ -9,6 +9,7 @@ const Orders = ({
   orderStatuses,
   foodAreas,
   setFinishedOrder,
+  setCanceledOrder,
   setActiveOrder,
 }) => {
   const activeOrders = useMemo(() => {
@@ -108,7 +109,7 @@ const Orders = ({
             <button
               className="Orders__cancel"
               onClick={() => {
-                setFinishedOrder({ itemId: order.shopId });
+                setCanceledOrder({ itemId: order.shopId });
               }}
             >
               Отм.
@@ -147,6 +148,7 @@ const Orders = ({
 
 Orders.defaultProps = {
   setFinishedOrder: () => {},
+  setCanceledOrder: () => {},
   setActiveOrder: () => {},
 };
 

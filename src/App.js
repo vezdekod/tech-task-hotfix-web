@@ -1,5 +1,9 @@
 import React, { useState } from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from "react-router-dom";
 
 import Home from "./panels/Home";
 import Place from "./panels/Place";
@@ -183,6 +187,17 @@ const App = () => {
             order={order}
             orderStatuses={orderStatuses}
             foodAreas={FOOD_AREAS}
+            setCanceledOrder={({ itemId }) => {
+              const nextStatuses = { ...orderStatuses };
+
+              nextStatuses[itemId] = "CANCELED";
+
+              setOrderStatuses(nextStatuses);
+              localStorage.setItem(
+                "orderStatuses",
+                JSON.stringify(nextStatuses)
+              );
+            }}
             setFinishedOrder={({ itemId }) => {
               const nextStatuses = { ...orderStatuses };
 
